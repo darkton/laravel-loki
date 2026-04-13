@@ -1,13 +1,13 @@
 <?php
 
-namespace Zie\Loki\Console\Commands;
+namespace Darkton\Loki\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
-use Zie\Loki\Exceptions\LokiBufferException;
-use Zie\Loki\Exceptions\LokiException;
-use Zie\Loki\Jobs\SendLogsToLokiJob;
-use Zie\Loki\Services\LokiBufferReader;
+use Darkton\Loki\Exceptions\LokiBufferException;
+use Darkton\Loki\Exceptions\LokiException;
+use Darkton\Loki\Jobs\SendLogsToLokiJob;
+use Darkton\Loki\Services\LokiBufferReader;
 
 class LokiSyncCommand extends Command
 {

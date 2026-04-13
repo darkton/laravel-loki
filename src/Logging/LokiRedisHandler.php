@@ -1,12 +1,12 @@
 <?php
 
-namespace Zie\Loki\Logging;
+namespace Darkton\Loki\Logging;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\DTOs\LogEntryDTO;
 
 class LokiRedisHandler extends AbstractProcessingHandler
 {

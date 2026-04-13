@@ -1,16 +1,16 @@
 <?php
 
-namespace Zie\Loki\Tests\Unit;
+namespace Darkton\Loki\Tests\Unit;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
-use Zie\Loki\Exceptions\LokiAuthenticationException;
-use Zie\Loki\Exceptions\LokiConfigurationException;
-use Zie\Loki\Exceptions\LokiPayloadException;
-use Zie\Loki\Exceptions\LokiServerException;
-use Zie\Loki\Services\LokiClient;
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\Exceptions\LokiAuthenticationException;
+use Darkton\Loki\Exceptions\LokiConfigurationException;
+use Darkton\Loki\Exceptions\LokiPayloadException;
+use Darkton\Loki\Exceptions\LokiServerException;
+use Darkton\Loki\Services\LokiClient;
+use Darkton\Loki\Tests\TestCase;
 
 class LokiClientTest extends TestCase
 {

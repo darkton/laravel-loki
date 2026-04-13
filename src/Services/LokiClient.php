@@ -1,17 +1,17 @@
 <?php
 
-namespace Zie\Loki\Services;
+namespace Darkton\Loki\Services;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Zie\Loki\Contracts\LokiClientInterface;
-use Zie\Loki\Exceptions\LokiAuthenticationException;
-use Zie\Loki\Exceptions\LokiConfigurationException;
-use Zie\Loki\Exceptions\LokiConnectionException;
-use Zie\Loki\Exceptions\LokiPayloadException;
-use Zie\Loki\Exceptions\LokiServerException;
+use Darkton\Loki\Contracts\LokiClientInterface;
+use Darkton\Loki\Exceptions\LokiAuthenticationException;
+use Darkton\Loki\Exceptions\LokiConfigurationException;
+use Darkton\Loki\Exceptions\LokiConnectionException;
+use Darkton\Loki\Exceptions\LokiPayloadException;
+use Darkton\Loki\Exceptions\LokiServerException;
 
 class LokiClient implements LokiClientInterface
 {

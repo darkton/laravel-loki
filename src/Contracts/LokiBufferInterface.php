@@ -1,9 +1,9 @@
 <?php
 
-namespace Zie\Loki\Contracts;
+namespace Darkton\Loki\Contracts;
 
-use Zie\Loki\DTOs\LogEntryDTO;
-use Zie\Loki\Exceptions\LokiBufferException;
+use Darkton\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Exceptions\LokiBufferException;
 
 interface LokiBufferInterface
 {

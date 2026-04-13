@@ -1,8 +1,8 @@
 <?php
 
-namespace Zie\Loki\Tests\Unit;
+namespace Darkton\Loki\Tests\Unit;
 
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\Tests\TestCase;
 
 class LokiConfigTest extends TestCase
 {

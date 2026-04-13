@@ -1,6 +1,6 @@
 <?php
 
-namespace Zie\Loki\Contracts;
+namespace Darkton\Loki\Contracts;
 
 interface LokiClientInterface
 {
@@ -9,10 +9,10 @@ interface LokiClientInterface
      *
      * @param  array  $logs  Array of log entries (each as associative array).
      *
-     * @throws \Zie\Loki\Exceptions\LokiPayloadException
-     * @throws \Zie\Loki\Exceptions\LokiConnectionException
-     * @throws \Zie\Loki\Exceptions\LokiAuthenticationException
-     * @throws \Zie\Loki\Exceptions\LokiServerException
+     * @throws \Darkton\Loki\Exceptions\LokiPayloadException
+     * @throws \Darkton\Loki\Exceptions\LokiConnectionException
+     * @throws \Darkton\Loki\Exceptions\LokiAuthenticationException
+     * @throws \Darkton\Loki\Exceptions\LokiServerException
      */
     public function send(array $logs): bool;
 }

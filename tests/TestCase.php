@@ -1,9 +1,9 @@
 <?php
 
-namespace Zie\Loki\Tests;
+namespace Darkton\Loki\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Zie\Loki\Providers\LokiServiceProvider;
+use Darkton\Loki\Providers\LokiServiceProvider;
 
 abstract class TestCase extends OrchestraTestCase
 {

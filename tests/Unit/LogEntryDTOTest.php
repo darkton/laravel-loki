@@ -1,11 +1,11 @@
 <?php
 
-namespace Zie\Loki\Tests\Unit;
+namespace Darkton\Loki\Tests\Unit;
 
 use Monolog\Level;
 use Monolog\LogRecord;
-use Zie\Loki\DTOs\LogEntryDTO;
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Tests\TestCase;
 
 class LogEntryDTOTest extends TestCase
 {

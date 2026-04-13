@@ -1,6 +1,6 @@
 <?php
 
-namespace Zie\Loki\DTOs;
+namespace Darkton\Loki\DTOs;
 
 use Monolog\LogRecord;
 
