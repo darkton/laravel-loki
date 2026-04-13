@@ -1,0 +1,59 @@
+{
+    "name": "zie/laravel-loki",
+    "description": "A Laravel package for shipping logs to Grafana Loki via OTLP with Redis buffering.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "loki",
+        "grafana",
+        "logging",
+        "otlp",
+        "redis"
+    ],
+    "authors": [
+        {
+            "name": "Zie Tecnologia",
+            "email": "contato@zie.com.br"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0",
+        "illuminate/http": "^12.0",
+        "illuminate/bus": "^12.0",
+        "illuminate/queue": "^12.0",
+        "illuminate/console": "^12.0",
+        "illuminate/cache": "^12.0",
+        "illuminate/redis": "^12.0",
+        "monolog/monolog": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^10.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zie\\Loki\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zie\\Loki\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zie\\Loki\\Providers\\LokiServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
