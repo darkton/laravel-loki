@@ -1,9 +1,11 @@
 # Laravel Loki
 
-> **⚠️ WARNING: WORK IN PROGRESS ⚠️**  
-> This package is in its early stages of development. The API and internal workings are still volatile and subject to significant changes. Using it in production is not recommended without proper validation and understanding of its behavior.
+> ⚠️ Beta release  
+> The API is considered stable for testing and production use, but may change before the first stable release (v1.0.0).
 
-A Laravel package designed to ship your application's logs directly to **Grafana Loki** using the OTLP ecosystem, featuring a safe queue and buffer system in **Redis** (to avoid bottlenecks in your request pipeline and prevent internal feedback loops).
+A Laravel logging package that ships logs to Grafana Loki via OTLP, built on top of Monolog.
+
+It uses Redis buffering and queued jobs to ensure safe, asynchronous delivery without impacting application performance or creating logging feedback loops.
 
 ## Installation
 
@@ -41,9 +43,6 @@ In your `config/logging.php` file, add it to the `channels` array:
     'loki' => [
         'driver' => 'monolog',
         'handler' => \Darkton\Loki\Logging\LokiRedisHandler::class,
-        'with' => [
-            'buffer' => app(\Darkton\Loki\Contracts\LokiBufferInterface::class),
-        ],
     ],
 ],
 ```
