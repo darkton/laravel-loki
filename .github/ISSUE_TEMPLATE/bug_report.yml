@@ -1,0 +1,56 @@
+name: Bug Report
+description: Report a problem with the Laravel Loki logging package
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: Describe the issue clearly and concisely.
+      placeholder: "The logs are not being sent to Loki..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide clear steps to reproduce the issue.
+      placeholder: |
+        1. Install package
+        2. Configure loki.php
+        3. Trigger log
+        4. Nothing appears in Grafana Loki
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+      placeholder: "Logs should be sent asynchronously to Loki via OTLP"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide relevant environment details
+      placeholder: |
+        Laravel: 11.x
+        PHP: 8.2+
+        Queue driver: Redis
+        OS: Ubuntu 22.04
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any logs, screenshots, or extra details
+    validations:
+      required: false
