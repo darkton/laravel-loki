@@ -1,14 +1,14 @@
 <?php
 
-namespace Zie\Loki\Tests\Unit;
+namespace Darkton\Loki\Tests\Unit;
 
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\Contracts\LokiClientInterface;
-use Zie\Loki\Console\Commands\LokiSyncCommand;
-use Zie\Loki\Infrastructure\Redis\LokiRedisBuffer;
-use Zie\Loki\Services\LokiBufferReader;
-use Zie\Loki\Services\LokiClient;
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\Contracts\LokiClientInterface;
+use Darkton\Loki\Console\Commands\LokiSyncCommand;
+use Darkton\Loki\Infrastructure\Redis\LokiRedisBuffer;
+use Darkton\Loki\Services\LokiBufferReader;
+use Darkton\Loki\Services\LokiClient;
+use Darkton\Loki\Tests\TestCase;
 
 class LokiServiceProviderTest extends TestCase
 {

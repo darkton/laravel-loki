@@ -1,12 +1,12 @@
 <?php
 
-namespace Zie\Loki\Tests\Feature;
+namespace Darkton\Loki\Tests\Feature;
 
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\DTOs\LogEntryDTO;
-use Zie\Loki\Exceptions\LokiBufferException;
-use Zie\Loki\Infrastructure\Redis\LokiRedisBuffer;
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Exceptions\LokiBufferException;
+use Darkton\Loki\Infrastructure\Redis\LokiRedisBuffer;
+use Darkton\Loki\Tests\TestCase;
 
 /**
  * These tests verify internal-log filtering behaviour.

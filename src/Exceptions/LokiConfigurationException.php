@@ -1,6 +1,6 @@
 <?php
 
-namespace Zie\Loki\Exceptions;
+namespace Darkton\Loki\Exceptions;
 
 class LokiConfigurationException extends LokiException
 {

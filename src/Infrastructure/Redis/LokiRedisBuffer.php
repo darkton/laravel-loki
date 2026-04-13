@@ -1,11 +1,11 @@
 <?php
 
-namespace Zie\Loki\Infrastructure\Redis;
+namespace Darkton\Loki\Infrastructure\Redis;
 
 use Illuminate\Support\Facades\Redis;
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\DTOs\LogEntryDTO;
-use Zie\Loki\Exceptions\LokiBufferException;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Exceptions\LokiBufferException;
 
 class LokiRedisBuffer implements LokiBufferInterface
 {

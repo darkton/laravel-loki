@@ -1,5 +1,5 @@
 {
-    "name": "zie/laravel-loki",
+    "name": "darkton/laravel-loki",
     "description": "A Laravel package for shipping logs to Grafana Loki via OTLP with Redis buffering.",
     "type": "library",
     "license": "MIT",
@@ -13,8 +13,8 @@
     ],
     "authors": [
         {
-            "name": "Zie Tecnologia",
-            "email": "contato@zie.com.br"
+            "name": "Darkton Hallisson",
+            "email": "me@darkton.com.br"
         }
     ],
     "require": {
@@ -35,18 +35,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Zie\\Loki\\": "src/"
+            "Darkton\\Loki\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zie\\Loki\\Tests\\": "tests/"
+            "Darkton\\Loki\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Zie\\Loki\\Providers\\LokiServiceProvider"
+                "Darkton\\Loki\\Providers\\LokiServiceProvider"
             ]
         }
     },

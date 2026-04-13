@@ -1,14 +1,14 @@
 <?php
 
-namespace Zie\Loki\Jobs;
+namespace Darkton\Loki\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Zie\Loki\Contracts\LokiClientInterface;
-use Zie\Loki\Exceptions\LokiException;
+use Darkton\Loki\Contracts\LokiClientInterface;
+use Darkton\Loki\Exceptions\LokiException;
 
 class SendLogsToLokiJob implements ShouldQueue
 {

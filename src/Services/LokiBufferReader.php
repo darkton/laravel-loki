@@ -1,9 +1,9 @@
 <?php
 
-namespace Zie\Loki\Services;
+namespace Darkton\Loki\Services;
 
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\Exceptions\LokiBufferException;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\Exceptions\LokiBufferException;
 
 class LokiBufferReader
 {

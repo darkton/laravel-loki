@@ -1,14 +1,14 @@
 <?php
 
-namespace Zie\Loki\Tests\Feature;
+namespace Darkton\Loki\Tests\Feature;
 
 use Illuminate\Support\Facades\Queue;
 use Mockery;
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\DTOs\LogEntryDTO;
-use Zie\Loki\Jobs\SendLogsToLokiJob;
-use Zie\Loki\Services\LokiBufferReader;
-use Zie\Loki\Tests\TestCase;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\DTOs\LogEntryDTO;
+use Darkton\Loki\Jobs\SendLogsToLokiJob;
+use Darkton\Loki\Services\LokiBufferReader;
+use Darkton\Loki\Tests\TestCase;
 
 class LokiSyncCommandTest extends TestCase
 {

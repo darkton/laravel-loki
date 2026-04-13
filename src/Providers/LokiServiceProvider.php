@@ -1,14 +1,14 @@
 <?php
 
-namespace Zie\Loki\Providers;
+namespace Darkton\Loki\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Zie\Loki\Console\Commands\LokiSyncCommand;
-use Zie\Loki\Contracts\LokiBufferInterface;
-use Zie\Loki\Contracts\LokiClientInterface;
-use Zie\Loki\Infrastructure\Redis\LokiRedisBuffer;
-use Zie\Loki\Services\LokiBufferReader;
-use Zie\Loki\Services\LokiClient;
+use Darkton\Loki\Console\Commands\LokiSyncCommand;
+use Darkton\Loki\Contracts\LokiBufferInterface;
+use Darkton\Loki\Contracts\LokiClientInterface;
+use Darkton\Loki\Infrastructure\Redis\LokiRedisBuffer;
+use Darkton\Loki\Services\LokiBufferReader;
+use Darkton\Loki\Services\LokiClient;
 
 class LokiServiceProvider extends ServiceProvider
 {
