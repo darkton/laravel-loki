@@ -1,27 +1,82 @@
-# 🚧 Work in Progress
+# Laravel Loki
 
-This project is currently under active development.
+> **⚠️ WARNING: WORK IN PROGRESS ⚠️**  
+> This package is in its early stages of development. The API and internal workings are still volatile and subject to significant changes. Using it in production is not recommended without proper validation and understanding of its behavior.
 
-## 📦 About
+A Laravel package designed to ship your application's logs directly to **Grafana Loki** using the OTLP ecosystem, featuring a safe queue and buffer system in **Redis** (to avoid bottlenecks in your request pipeline and prevent internal feedback loops).
 
-A Laravel package for shipping application logs to **Grafana Loki** via the **OTLP HTTP protocol**.
+## Installation
 
-It uses a Redis buffer and queued jobs to ensure reliable, asynchronous delivery without slowing down your application.
+You can install the package directly via Packagist using Composer:
 
-## ⚠️ Status
+```bash
+composer require darkton/laravel-loki
+```
 
-- Not production ready
-- Breaking changes may occur
-- Documentation is incomplete
+After installation, you can optionally publish the configuration file (useful for customizing Grafana access, batch limits, and queues to be used):
 
-## 📌 Notes
+```bash
+php artisan vendor:publish --tag="loki-config"
+```
 
-This package is being built and refined. Use at your own risk for now.
+## Basic Configuration (.env)
 
-## 🤝 Contributing
+In your `.env` file, you will need to set up the following Grafana Loki credentials to be able to send logs:
 
-Feel free to open issues or suggestions, but keep in mind the project is still evolving.
+```env
+LOKI_OTLP_ENDPOINT="https://logs-prod-...grafana.net/otlp/v1/logs"
+LOKI_USERNAME="your_stack_id"
+LOKI_API_KEY="your_access_token"
+```
 
----
+## How to access / Basic Usage
 
-More details coming soon.
+To enable sending logs to `loki`, you must register this channel in Laravel's logging structure.
+In your `config/logging.php` file, add it to the `channels` array:
+
+```php
+'channels' => [
+    // ...
+
+    'loki' => [
+        'driver' => 'monolog',
+        'handler' => \Darkton\Loki\Logging\LokiRedisHandler::class,
+        'with' => [
+            'buffer' => app(\Darkton\Loki\Contracts\LokiBufferInterface::class),
+        ],
+    ],
+],
+```
+
+Now you can log normally and direct your default stack to "loki" or access the channel directly:
+
+```php
+use Illuminate\Support\Facades\Log;
+
+Log::channel('loki')->info('This log will be saved in Redis and later dispatched to Loki!');
+```
+
+### The Dispatcher (Sync Command)
+
+Monolog's `LokiRedisHandler` **does not** send HTTP requests immediately. Instead, it saves them in a secure Redis list (buffer).
+
+To actually ship these logs to Grafana Loki, you need to call the sync command. It will read the buffer, split it into organized batches, and dispatch a Laravel `Job` to perform the OTLP async request:
+
+You can call it manually:
+```bash
+php artisan loki:sync
+```
+
+Ideally, you should schedule it in your console infrastructure (`routes/console.php` or `app/Console/Kernel.php` depending on your Laravel version):
+
+```php
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::command('loki:sync')->everyMinute();
+```
+
+> **Tip**: Make sure your `queue:work` supervisors or Horizon are running on your server, as the heavy pushing is offloaded to your application's queues!
+
+## License
+
+This package is distributed and licensed under the terms of the [MIT license](LICENSE).
